@@ -16,6 +16,9 @@ const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
+const tailWords = tail(words);
+assertEqual(tailWords.length, words.length -1); // tail should have one element less than its input
+
 const oneEl = tail([1]); // One element array
 assertEqual(oneEl.length, 0); // Tail should be empty array
 
