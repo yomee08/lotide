@@ -23,8 +23,20 @@ const assertArraysEqual = function(actual, expected) {
   
 // IMPLEMENTATION of without function
 const without = function(source, itemsToRemove) {
-  // Create a new array with elements from source that are not in itemsToRemove
-  return source.filter(item => !itemsToRemove.includes(item));
+  // Create a new array to store elements that are not in itemsToRemove
+  const result = [];
+    
+  // Iterate through each element in the source array
+  for (let item of source) {
+    // Check if the current item is not in the itemsToRemove array
+    if (!itemsToRemove.includes(item)) {
+      // If the item is not in itemsToRemove, add it to the result array
+      result.push(item);
+    }
+  }
+    
+  // Return the new array
+  return result;
 };
   
 // TEST CASES
@@ -36,3 +48,12 @@ const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+  
+// Additional test cases
+console.log(without([1, 2, 3, 4, 5], [2, 4])); // => [1, 3, 5]
+console.log(without(["a", "b", "c"], ["b"])); // => ["a", "c"]
+console.log(without([1, "2", 3, "4"], [1, "4"])); // => ["2", 3]
+  
+// Empty array and empty removal list test cases
+console.log(without([], [])); // => []
+console.log(without([1, 2, 3], [])); // => [1, 2, 3]
