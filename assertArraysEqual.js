@@ -1,4 +1,10 @@
 // IMPLEMENTATION of assertArraysEqual
+// This function takes two arrays and checks if they are equal. 
+// If they are, it prints a success message to the console. 
+// If they are not, it prints a failure message.
+const assertArraysEqual = function(actual, expected) {
+  ...
+};
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
