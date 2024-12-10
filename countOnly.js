@@ -10,8 +10,8 @@ const assertEqual = function(actual, expected) {
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
 const countOnly = function(allItems, itemsToCount) {
-  // The function currently does nothing and will return undefined
-  // This may cause the TypeError when trying to access properties
+  const results = {};
+  return results;
 };
 
 // Test code
